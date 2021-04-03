@@ -12,6 +12,11 @@ class SeriesController extends Controller
      */
     private $seriesRepository;
 
+    /**
+     * Series repository instance on construct.
+     *
+     * @param SeriesRepository $seriesRepo
+     */
     public function __construct(SeriesRepository $seriesRepo)
     {
         $this->seriesRepository = $seriesRepo;
@@ -41,11 +46,25 @@ class SeriesController extends Controller
             : response()->json(['message' => 'no content'], 404);
     }
 
+    /**
+     * Create new series
+     *
+     * @param Request $request
+     * @return mixed
+     *
+     */
     public function store(Request $request)
     {
         return $this->seriesRepository->create($request);
     }
 
+    /**
+     * Update series
+     *
+     * @param Request $request
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function update(Request $request, int $id)
     {
         $serie = $this->seriesRepository->search($id);
@@ -60,6 +79,12 @@ class SeriesController extends Controller
             );
     }
 
+    /**
+     * Destroy series by id
+     *
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function destroy(int $id)
     {
         $serie = $this->seriesRepository->delete($id);
