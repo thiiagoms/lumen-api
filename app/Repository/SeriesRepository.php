@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Models\Series;
+use App\Models\Series as SeriesModel;
 use Illuminate\Http\Request;
 
 class SeriesRepository
@@ -14,24 +14,24 @@ class SeriesRepository
      */
     private $seriesModel;
 
-    public function __construct(Series $seriesModel)
+    public function __construct(SeriesModel $seriesModel)
     {
         $this->seriesModel = new $seriesModel();
     }
 
     public function getAll()
     {
-        return $this->seriesModel::all();
+        return $this->seriesModel->all();
     }
 
     public function search(int $id)
     {
-        return $this->seriesModel::find($id);
+        return $this->seriesModel->find($id);
     }
 
     public function create(Request $request)
     {
-        return $this->seriesModel::create($request->all(), 201);
+        return $this->seriesModel->create($request->all(), 201);
     }
 
     public function refresh(Request $request, int $id)
@@ -45,6 +45,6 @@ class SeriesRepository
 
     public function delete(int $id)
     {
-        return $this->seriesModel::destroy($id);
+        return $this->seriesModel->destroy($id);
     }
 }
