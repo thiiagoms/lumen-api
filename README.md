@@ -25,7 +25,7 @@ $ php -S localhost:8000 -t public
 ## Auth on the route with your created user:
 
 ```
-/api/auth
+POST /api/auth
 ```
 
 ## Available routes:
