@@ -23,7 +23,8 @@ $router->group(['prefix' => 'api', 'middleware' => 'authenticator'], function ()
         $router->get('/', ['uses' => 'SeriesController@index']);
         $router->get('{id}', ['uses' => 'SeriesController@show']);
         $router->get('{id}/episodes', ['uses' => 'EpisodesController@series']);
-        $router->post('', ['uses'  => 'SeriesController@store']);
+        $router->post('', ['uses' => 'SeriesController@store']);
+        $router->put('{id}', ['uses' => 'SeriesController@update']);
         $router->delete('{id}', ['uses' => 'SeriesController@destroy']);
     });
 

@@ -38,8 +38,20 @@ class CreateUserCommand extends Command
     public function handle()
     {
         try {
-            $email = readline("E-mail: ");
-            $password = readline("Password: ");
+
+            echo PHP_EOL . <<<EOL
+                ──███▅▄▄▄▄▄▄▄▄▄
+                ─██▐████████████
+                ▐█▀████████████▌▌
+                ▐─▀▀▀▐█▌▀▀███▀█─▌
+                ▐▄───▄█───▄█▌▄█
+
+                [*] create user on application via CLI!
+                [*] Last update: 2021-02-16
+                [*] Author: Thiago Martins AKA thiiagoms
+            EOL . PHP_EOL . PHP_EOL;
+            $email = readline("[*] E-mail: ");
+            $password = readline("[*] Password: ");
 
             $password = Hash::make($password);
             \App\Models\User::create([
