@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 /**
  * Class Create User command
- * 
+ *
  * @category Console Command
  * @package App\Console\Commands
  */
@@ -18,27 +18,26 @@ class CreateUserCommand extends Command
 {
     /**
      *  Console commmand name
-     * 
+     *
      * @var string
      */
     protected $signature = "create:user";
 
     /**
      * Console command description
-     * 
+     *
      * @var string
      */
     protected $description = "Create user to auth on API";
 
     /**
-     * Execute the console command
-     * 
-     * @return mixed
+     * Execute the console commane
+     *
+     * @return void
      */
     public function handle()
     {
         try {
-
             echo PHP_EOL . <<<EOL
                 ──███▅▄▄▄▄▄▄▄▄▄
                 ─██▐████████████
@@ -50,10 +49,12 @@ class CreateUserCommand extends Command
                 [*] Last update: 2021-02-16
                 [*] Author: Thiago Martins AKA thiiagoms
             EOL . PHP_EOL . PHP_EOL;
+
             $email = readline("[*] E-mail: ");
             $password = readline("[*] Password: ");
 
             $password = Hash::make($password);
+
             \App\Models\User::create([
                 'email' => $email,
                 'password' => $password,

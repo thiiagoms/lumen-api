@@ -59,7 +59,7 @@ class Episodescontroller extends Controller
 
     /**
      * Update episodes by id
-     * 
+     *
      * @param Request $request
      * @param int $id
      * @return \Illuminate\Http\JsonResponse

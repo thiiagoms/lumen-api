@@ -3,15 +3,29 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Episodes extends Model
 {
-    public $timestamps = false;
+    /**
+     * Table name
+     *
+     * @var string
+     */
     protected $table = 'episodes';
+
+    /**
+     * Mass insert
+     *
+     * @var string[]
+     */
     protected $fillable = ['id', 'season', 'number', 'watched', 'series_id'];
 
-    public function series()
+    /**
+     * @return BelongsTo
+     */
+    public function series(): BelongsTo
     {
-        $this->belongsTo(Series::class);
+        return $this->belongsTo(Series::class);
     }
 }

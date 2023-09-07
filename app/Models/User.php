@@ -10,13 +10,14 @@ use Laravel\Lumen\Auth\Authorizable;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
-    use Authenticatable, Authorizable;
+    use Authenticatable;
+    use Authorizable;
 
     public $timestamps = false;
 
     /**
      * User table
-     * 
+     *
      * @var string
      */
     protected $table = 'users';
