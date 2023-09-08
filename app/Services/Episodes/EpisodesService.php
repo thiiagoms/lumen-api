@@ -41,9 +41,7 @@ class EpisodesService extends Service
         $episodes = (int) $params['episodes'];
 
         for ($seasonsCount = 1; $seasonsCount <= $seasons; $seasonsCount++) {
-
             for ($episodesCount = 1; $episodesCount <= $episodes; $episodesCount++) {
-
                 $data[] = [
                     'season'    => $seasonsCount,
                     'episode'   => $episodesCount,

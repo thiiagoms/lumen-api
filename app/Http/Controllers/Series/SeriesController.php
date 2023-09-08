@@ -73,7 +73,6 @@ class SeriesController extends Controller
         return response()->json($result, $result['status']);
     }
 
-
     /**
      * @param int $id
      * @return JsonResponse

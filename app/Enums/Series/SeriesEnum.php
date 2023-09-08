@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace App\Enums\Series;
 
+/**
+ * Basic enum for series validations
+ *
+ * @package App\Enums\Series
+ * @version 1.0
+ */
 abstract class SeriesEnum
 {
     /**

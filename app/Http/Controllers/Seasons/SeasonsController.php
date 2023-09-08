@@ -6,6 +6,4 @@ use App\Http\Controllers\Controller;
 
 class SeasonsController extends Controller
 {
-
-
 }

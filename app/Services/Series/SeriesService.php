@@ -167,4 +167,12 @@ final class SeriesService extends Service
 
         return ['data' => '', 'status' => Response::HTTP_NO_CONTENT];
     }
+
+    /**
+     * @param int $seriesId
+     * @return void
+     */
+    public function seasons(int $seriesId)
+    {
+    }
 }

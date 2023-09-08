@@ -8,6 +8,7 @@ use App\Contracts\Series\SeriesContract;
 use App\Models\Series;
 use App\Repositories\Repository;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Series repository package
@@ -19,6 +20,14 @@ use Illuminate\Database\Eloquent\Collection;
 class SeriesRepository extends Repository implements SeriesContract
 {
     protected $model = Series::class;
+
+    /**
+     * @param int $seriesId
+     * @return Collection|null
+     */
+    public function seasons(int $seriesId): Collection|null
+    {
+    }
 
     /**
      * @param int $seriesId
