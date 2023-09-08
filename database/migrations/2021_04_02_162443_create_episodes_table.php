@@ -14,15 +14,12 @@ class CreateEpisodesTable extends Migration
     public function up()
     {
         Schema::create('episodes', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
+            $table->id();
             $table->integer('season');
-            $table->integer('number');
+            $table->integer('episode');
             $table->integer('watched')->default(false);
-            $table->integer('series_id');
 
-            $table->foreign('series_id')
-                ->references('id')
-                ->on('series');
+            $table->foreignId('series_id')->constrained('series');
         });
     }
 
