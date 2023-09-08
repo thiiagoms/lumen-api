@@ -3,14 +3,35 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Series extends Model
 {
-    public $timestamps = false;
+    /**
+     * Table name
+     *
+     * @var string
+     */
     protected $table = 'series';
-    protected $fillable = ['id', 'name', 'description', 'created_at'];
 
-    public function episodes()
+    /**
+     * Mass insert
+     *
+     * @var string[]
+     */
+    protected $fillable = ['id', 'name', 'description'];
+
+    /**
+     * Hide fields
+     *
+     * @var string[]
+     */
+    protected $hidden = ['created_at', 'updated_at'];
+
+    /**
+     * @return HasMany
+     */
+    public function episodes(): HasMany
     {
         return $this->hasMany(Episodes::class);
     }

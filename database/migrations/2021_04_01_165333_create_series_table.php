@@ -14,10 +14,10 @@ class CreateSeriesTable extends Migration
     public function up()
     {
         Schema::create('series', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->string('name', 100)->unique();
-            $table->longText('description');
-            $table->timestamp('created_at');
+            $table->id();
+            $table->string('name', 155)->unique();
+            $table->longText('description')->nullable(true);
+            $table->timestamps();
         });
     }
 

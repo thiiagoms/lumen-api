@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Contracts\Series\SeriesContract;
+use App\Repositories\Series\SeriesRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,8 +13,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-        //
     }
 }
